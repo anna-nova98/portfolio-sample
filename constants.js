@@ -172,16 +172,68 @@ export const SKILLS = {
 //   },
 // ];
 export const PROJECTS = [
-    {image:"/projects/1.png"},
-    {image:"/projects/2.png"},
-    {image:"/projects/3.png"},
-    {image:"/projects/4.png"},
-    {image:"/projects/5.png"},
-    {image:"/projects/6.png"},
-    {image:"/projects/7.png"},
-    {image:"/projects/8.png"},
-    {image:"/projects/9.png"},
-    {image:"/projects/10.png"},
+    {
+      name:"Portfolio Website",
+      image:"/projects/1-1.png",
+      gallery:[
+        "/projects/1-1.png",
+        "/projects/1-2.png",
+        "/projects/1-3.png",
+        "/projects/1-4.png",
+        "/projects/1-5.png",
+        "/projects/1-6.png",
+      ]
+      
+    },
+     {
+      name:"Portfolio Website",
+      image:"/projects/2-1.png",
+      gallery: [
+        "/projects/2-1.png",
+      ]
+      
+    },
+     {
+      name:"Portfolio Website",
+      image:"/projects/3-1.png",
+      gallery: [
+        "/projects/3-1.png",
+        "/projects/3-2.png",
+        "/projects/3-3.png",
+      ]   
+    },
+     {
+      name:"Portfolio Website",
+      image:"/projects/4-1.png",
+      gallery: [
+       "/projects/4-1.png",
+       "/projects/4-2.png",
+       "/projects/4-3.png",
+      ]
+    },
+    {
+      name:"Portfolio Website",
+      image:"/projects/5-1.png",
+      gallery: [
+        "/projects/5-1.png",
+      ]
+    },
+    {
+      name:"Portfolio Website",
+      image:"/projects/6-1.png",
+      gallery: [
+        "/projects/6-1.png",
+        "/projects/6-2.png",
+        "/projects/6-3.png",
+      ]   
+    },
+    {
+      name:"Portfolio Website",
+      image:"/projects/7-1.png",
+      gallery: [
+        "/projects/7-1.png",
+      ]   
+    },
 ];
 export const WORK_CONTENTS = {
   GRAPEVINE: [
