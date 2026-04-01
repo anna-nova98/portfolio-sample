@@ -73,7 +73,7 @@ const Contact = () => {
       empty();
       return;
     }
-
+    console.log(process.env.NEXT_PUBLIC_USER_ID ,"========================"  );
     mail({ name, email, message })
       .then((res) => {
         if (res.status === 200) {
