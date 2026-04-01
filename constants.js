@@ -235,6 +235,7 @@ export const PROJECTS = [
       ]   
     },
 ];
+
 export const WORK_CONTENTS = {
   GRAPEVINE: [
     {
