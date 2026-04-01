@@ -84,6 +84,7 @@ const Skills = () => {
                   width={64}
                   height={64}
                   className="mb-3"
+                  unoptimized 
                 />
                 <p className="text-center font-semibold text-gray-900 text-base">
                   {skill.replace(/([A-Z])/g, " $1").trim()}

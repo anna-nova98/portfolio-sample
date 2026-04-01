@@ -97,6 +97,7 @@ const ProjectTile = ({ project, classes, isDesktop }) => {
             alt={name}
             className="absolute w-full h-full top-0 left-0 rounded-3xl object-cover"
             fill
+            unoptimized 
           />
         </div>
       </div>

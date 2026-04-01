@@ -37,6 +37,7 @@ const Header = ({ children }) => {
             alt="Logo - Aria Snow"
             width={25}
             height={25}
+            unoptimized 
           />
         </a>
         <div className="outer-menu relative flex items-center gap-8 z-[1]">
