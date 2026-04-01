@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useLayoutEffect } from "react";
 import Typed from "typed.js";
+import Image from "next/image";
 import gsap from "gsap";
 import Button from "../Button/Button";
 import Profiles from "../Profiles/Profiles";
@@ -83,9 +84,9 @@ const Hero = () => {
         </h5>
         <h1 className={`${styles.heroName} text-white text-6xl font-semibold`}>
           <span className={`relative ${styles.emphasize} staggered-reveal`}>
-            Shubh
+            Aria
           </span>
-          <span className="staggered-reveal"> Porwal</span>
+          <span className="staggered-reveal"> Snow</span>
         </h1>
         <p>
           <span
@@ -97,15 +98,21 @@ const Hero = () => {
           <Profiles />
         </div>
         <div className="staggered-reveal pt-4">
-          <Button href={`#${MENULINKS[4].ref}`} classes="link" type="primary">
+          <Button href={`#${MENULINKS[3].ref}`} classes="link" type="primary">
             Let&apos;s Talk
           </Button>
         </div>
       </div>
       <div
-        className="absolute invisible w-4/12 bottom-1.5 lg:visible lg:right-12 2xl:right-16"
-        ref={lottieRef}
-      />
+        className="absolute w-4/12 bottom-1.5 right-[5rem] "
+      >
+         <img
+          src={"/avatar.png"}
+          alt={name}
+          className="w-[100%] rounded-[5%]"
+          
+        />
+      </div>
     </section>
   );
 };

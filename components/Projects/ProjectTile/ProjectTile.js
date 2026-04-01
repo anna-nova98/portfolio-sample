@@ -1,4 +1,5 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import ReactDOM from "react-dom";
 import Image from "next/image";
 import VanillaTilt from "vanilla-tilt";
 import styles from "./ProjectTile.module.scss";
@@ -12,17 +13,62 @@ const tiltOptions = {
   gyroscope: false,
 };
 
+const FullscreenImage = ({ src, alt, onClose }) => {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+
+    const originalBody = document.body.style.overflow;
+    const originalHtml = document.documentElement.style.overflow;
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+
+
+    setVisible(true);
+
+    return () => {
+      document.body.style.overflow = originalBody;
+      document.documentElement.style.overflow = originalHtml;
+    };
+  }, []);
+
+  const handleClose = () => {
+    setVisible(false);
+    setTimeout(onClose, 300); 
+  };
+
+  return ReactDOM.createPortal(
+    <div
+      className={`fixed top-0 left-0 w-screen h-screen bg-[#000000c7] bg- z-[9999] flex items-center justify-center transition-opacity duration-300 ${
+        visible ? "opacity-100" : "opacity-0"
+      } cursor-auto`}
+      onClick={handleClose} 
+    >
+      <img
+        src={src}
+        alt={alt}
+        className={`object-contain max-w-full max-h-full transition-transform duration-300 ${
+          visible ? "scale-100" : "scale-90"
+        } cursor-auto`}
+        onClick={(e) => e.stopPropagation()} 
+      />
+      <button
+        className="absolute top-4 right-4 text-white text-3xl font-bold hover:text-gray-300 cursor-pointer"
+        onClick={handleClose}
+      >
+        &times;
+      </button>
+    </div>,
+    document.body
+  );
+};
+
 const ProjectTile = ({ project, classes, isDesktop }) => {
   const projectCard = useRef(null);
+  const [fullscreenImage, setFullscreenImage] = useState(null);
 
-  const { name, imageKey, description, gradient, url, tech } = project;
-
+  const { name, imageKey } = project;
   const image = PROJECT_IMAGES[imageKey];
-
-  let additionalClasses = "";
-  if (classes) {
-    additionalClasses = classes;
-  }
 
   useEffect(() => {
     const node = projectCard.current;
@@ -31,77 +77,39 @@ const ProjectTile = ({ project, classes, isDesktop }) => {
   }, []);
 
   return (
-    <a
-      href={url || undefined}
-      className={`overflow-hidden rounded-3xl snap-start link ${additionalClasses}`}
-      target="_blank"
-      rel="noreferrer"
-      style={{
-        maxWidth: isDesktop ? "calc(100vw - 2rem)" : "calc(100vw - 4rem)",
-        flex: "1 0 auto",
-        WebkitMaskImage: "-webkit-radial-gradient(white, black)",
-      }}
-    >
+    <>
+      
       <div
-        ref={projectCard}
-        className={`${styles.projectTile} rounded-3xl relative p-6 flex flex-col justify-between max-w-full`}
+        onClick={() => setFullscreenImage(project.image)}
+        className={`overflow-hidden rounded-3xl snap-start cursor-pointer ${classes || ""}`}
         style={{
-          background: `linear-gradient(90deg, ${gradient[0]} 0%, ${gradient[1]} 100%)`,
+          maxWidth: isDesktop ? "calc(100vw - 2rem)" : "calc(100vw - 4rem)",
+          flex: "1 0 auto",
+          WebkitMaskImage: "-webkit-radial-gradient(white, black)",
         }}
       >
-        <Image
-          src="/project-bg.svg"
-          alt="project"
-          className="absolute w-full h-full top-0 left-0 opacity-20 rounded-3xl"
-          fill
-        />
-        <Image
-          src={image}
-          alt={name}
-          placeholder="blur"
-          fill
-          className={styles.projectImage}
-        />
-        {!isDesktop && (
-          <div
-            className="absolute bottom-0 left-0 w-full h-20"
-            style={{
-              background: `linear-gradient(0deg, ${gradient[0]} 10%, rgba(0,0,0,0) 100%)`,
-            }}
-          />
-        )}
-        <h1
-          className="font-medium text-2xl sm:text-3xl z-10 pl-2 pt-2 transform-gpu"
-          style={{ transform: "translateZ(3rem)" }}
-        >
-          {name}
-        </h1>
         <div
-          className={`
-            ${styles.techIcons} w-1/2 h-full absolute left-24 top-0 sm:flex items-center hidden
-          `}
+          ref={projectCard}
+          className={`${styles.projectTile} rounded-3xl relative p-6 flex flex-col justify-between max-w-full`}
         >
-          <div className="flex flex-col pb-8">
-            {tech.map((el, i) => (
-              <Image
-                className={`${i % 2 === 0 && "ml-16"} mb-4`}
-                src={`/projects/tech/${el}.svg`}
-                alt={el}
-                height={45}
-                width={45}
-                key={el}
-              />
-            ))}
-          </div>
+          <Image
+            src={project.image}
+            alt={name}
+            className="absolute w-full h-full top-0 left-0 rounded-3xl object-cover"
+            fill
+          />
         </div>
-        <h2
-          className="text-lg z-10 tracking-wide font-medium text-white transform-gpu"
-          style={{ transform: "translateZ(0.8rem)" }}
-        >
-          {description}
-        </h2>
       </div>
-    </a>
+
+     
+      {fullscreenImage && (
+        <FullscreenImage
+          src={fullscreenImage}
+          alt={name}
+          onClose={() => setFullscreenImage(null)}
+        />
+      )}
+    </>
   );
 };
 

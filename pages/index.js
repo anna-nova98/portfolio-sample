@@ -55,19 +55,13 @@ export default function Home() {
           <ProgressIndicator />
           <Cursor isDesktop={isDesktop} />
           <main className="flex flex-col">
-            <div
-              role="img"
-              className="text-gray-light-1 opacity-10 sm:text-9xl xs:text-8xl inline-block -z-10 absolute rotate-90 right-0 md:top-52 xs:top-96"
-            >
-              DEV
-            </div>
             <div className="fixed top-0 left-0 h-screen w-screen -z-1" />
             <Hero />
             <About1 clientHeight={clientHeight} />
             <Skills />
             <About2 clientHeight={clientHeight} />
             <Projects isDesktop={isDesktop} clientHeight={clientHeight} />
-            <Work isDesktop={isDesktop} />
+            {/* <Work isDesktop={isDesktop} /> */}
             <Collaboration clientHeight={clientHeight} />
             <Contact />
           </main>

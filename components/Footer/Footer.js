@@ -46,7 +46,7 @@ const Footer = () => {
             </div>
             <div className="pt-4 text-center">
               <Button
-                href={`#${MENULINKS[4].ref}`}
+                href={`#${MENULINKS[3].ref}`}
                 classes="link"
                 type="secondary"
               >
@@ -58,7 +58,7 @@ const Footer = () => {
               <button onClick={handleClick} className="link cursor-none">
                 <span className="block animate-bounce">❤️</span>
               </button>{" "}
-              by <span className="text-white">Shubh Porwal</span>
+              by <span className="text-white">Aria Snow</span>
             </p>
           </div>
         </div>

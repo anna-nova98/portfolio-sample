@@ -3,29 +3,49 @@ import { useLayoutEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { MENULINKS, SKILLS } from "../../constants";
+
+const SKILLS = {
+  core: ["ProductAdvertising", "BrandStrategy", "VisualIdentity"],
+  tools: ["Photoshop", "Illustrator", "AfterEffects", "Figma", "XD"],
+  campaigns: ["PrintDesign", "DigitalDesign", "SocialMedia", "MotionGraphics"],
+  storytelling: ["UXDesign", "VisualStorytelling", "UserExperience"],
+};
 
 const Skills = () => {
   const sectionRef = useRef(null);
 
   useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap
-        .timeline({ defaults: { ease: "none" } })
-        .from(
-          sectionRef.current.querySelectorAll(".staggered-reveal"),
-          { opacity: 0, duration: 0.5, stagger: 0.5 },
-          "<"
-        );
+    gsap.registerPlugin(ScrollTrigger);
 
-      ScrollTrigger.create({
-        trigger: sectionRef.current.querySelector(".skills-wrapper"),
-        start: "100px bottom",
-        end: "center center",
-        scrub: 0,
-        animation: tl,
+    const ctx = gsap.context(() => {
+      // Section titles animation
+      gsap.from(".skills-title", {
+        y: 50,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+        },
       });
-    });
+
+      // Skill cards animation
+      gsap.from(".skill-card", {
+        y: 50,
+        opacity: 0,
+        scale: 0.8,
+        rotate: () => gsap.utils.random(-5, 5),
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 85%",
+        },
+      });
+    }, sectionRef);
 
     return () => ctx.revert();
   }, []);
@@ -33,97 +53,44 @@ const Skills = () => {
   return (
     <section
       ref={sectionRef}
-      id={MENULINKS[1].ref}
-      className="w-full relative select-none mt-44"
+      id="skills"
+      className="w-full relative select-none mt-44 py-16 bg-gradient-to-r from-purple-50 via-pink-50 to-yellow-50"
     >
-      <div className="section-container py-16 flex flex-col justify-center">
-        <img
-          src="/right-pattern.svg"
-          alt=""
-          className="absolute hidden right-0 bottom-2/4 w-2/12 max-w-xs md:block"
-          loading="lazy"
-          height={700}
-          width={320}
-        />
-        <div className="flex flex-col skills-wrapper">
-          <div className="flex flex-col">
-            <p className="uppercase tracking-widest text-gray-light-1 staggered-reveal">
-              SKILLS
-            </p>
-            <h1 className="text-6xl mt-2 font-medium text-gradient w-fit staggered-reveal">
-              My Skills
-            </h1>
-            <h2 className="text-[1.65rem] font-medium md:max-w-lg w-full mt-2 staggered-reveal">
-              I like to take responsibility to craft aesthetic user experience
-              using modern frontend architecture.{" "}
-            </h2>
-          </div>
-          <div className="mt-10">
-            <h3 className="uppercase tracking-widest text-gray-light-2 font-medium text-base mb-4 staggered-reveal">
-              LANGUAGES AND TOOLS
-            </h3>
-            <div className="flex items-center flex-wrap gap-6 staggered-reveal">
-              {SKILLS.languagesAndTools.map((skill) => (
+      <div className="section-container mx-auto px-6 flex flex-col items-center">
+        <p className="uppercase tracking-widest text-gray-500 skills-title">
+          SKILLS
+        </p>
+        <h1 className="text-6xl mt-2 font-bold skills-title text-center text-gray-900">
+          My Designer Skills
+        </h1>
+        <h2 className="text-xl md:max-w-2xl text-center mt-4 text-gray-700 skills-title">
+          My work is rooted in product advertising. I take pride in designing engaging experiences that merge aesthetics, brand strategy, and storytelling.
+        </h2>
+
+        {/* Skills Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 mt-16 w-full">
+          {Object.entries(SKILLS).map(([category, items]) =>
+            items.map((skill) => (
+              <div
+                key={skill}
+                className="skill-card flex flex-col items-center rounded-xl p-6 cursor-pointer
+                          bg-gradient-to-br from-purple-200 via-pink-200 to-yellow-200
+                          shadow-2xl hover:scale-110 hover:-rotate-1 transition-transform duration-500"
+                style={{ transformOrigin: "center" }}
+              >
                 <Image
-                  key={skill}
                   src={`/skills/${skill}.svg`}
                   alt={skill}
-                  width={50}
-                  height={50}
+                  width={64}
+                  height={64}
+                  className="mb-3"
                 />
-              ))}
-            </div>
-          </div>
-          <div className="mt-10">
-            <h3 className="uppercase tracking-widest text-gray-light-2 font-medium text-base mb-4 staggered-reveal">
-              LIBRARIES AND FRAMEWORKS
-            </h3>
-            <div className="flex flex-wrap gap-6 transform-gpu staggered-reveal">
-              {SKILLS.librariesAndFrameworks.map((skill) => (
-                <Image
-                  key={skill}
-                  src={`/skills/${skill}.svg`}
-                  alt={skill}
-                  width={50}
-                  height={50}
-                />
-              ))}
-            </div>
-          </div>
-          <div className="flex flex-wrap mt-10">
-            <div className="mr-16 xs:mr-20 mb-6 staggered-reveal">
-              <h3 className="uppercase tracking-widest text-gray-light-2 font-medium text-base mb-4">
-                DATABASES
-              </h3>
-              <div className="flex flex-wrap gap-6 transform-gpu">
-                {SKILLS.databases.map((skill) => (
-                  <Image
-                    key={skill}
-                    src={`/skills/${skill}.svg`}
-                    alt={skill}
-                    width={50}
-                    height={50}
-                  />
-                ))}
+                <p className="text-center font-semibold text-gray-900 text-base">
+                  {skill.replace(/([A-Z])/g, " $1").trim()}
+                </p>
               </div>
-            </div>
-            <div className="staggered-reveal">
-              <h3 className="uppercase tracking-widest text-gray-light-2 font-medium text-base mb-4">
-                Other
-              </h3>
-              <div className="flex flex-wrap gap-6 transform-gpu">
-                {SKILLS.other.map((skill) => (
-                  <Image
-                    key={skill}
-                    src={`/skills/${skill}.svg`}
-                    alt={skill}
-                    width={50}
-                    height={50}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
+            ))
+          )}
         </div>
       </div>
     </section>

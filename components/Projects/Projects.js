@@ -93,14 +93,13 @@ const Projects = ({ isDesktop, clientHeight }) => {
           ref={sectionTitleRef}
         >
           <p className="uppercase tracking-widest text-gray-light-1 staggered-reveal">
-            PROJECTS
+            CREATIONS
           </p>
           <h1 className="text-6xl mt-2 font-medium text-gradient w-fit staggered-reveal">
-            My Projects
+            A Collection of My Creations
           </h1>
           <h2 className="text-[1.65rem] font-medium md:max-w-lg max-w-sm mt-2 staggered-reveal">
-            Some things I&apos;ve built with love, expertise and a pinch of
-            magical ingredients.{" "}
+           Carefully crafted, thoughtfully designed, and sprinkled with a touch of creativity.{" "}
           </h2>
         </div>
         <div
@@ -114,7 +113,7 @@ const Projects = ({ isDesktop, clientHeight }) => {
                 index === PROJECTS.length - 1 ? "" : "mr-8 xs:mr-10 sm:mr-12"
               }
               project={project}
-              key={project.name}
+              key={index}
             />
           ))}
         </div>

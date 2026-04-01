@@ -1,12 +1,12 @@
 export const METADATA = {
-  author: "Shubh Porwal",
-  title: "Portfolio | Shubh Porwal",
+  author: "Aria Snow",
+  title: "Portfolio | Aria Snow",
   description:
-    "Shubh Porwal is a passionate Frontend Engineer, dedicated to crafting aesthetic and modern apps that captivate and engage users.",
+    "Aria Snow is a passionate Frontend Engineer, dedicated to crafting aesthetic and modern apps that captivate and engage users.",
   siteUrl: "https://www.shubhporwal.me/",
   twitterHandle: "@shubhporwal24",
   keywords: [
-    "Shubh Porwal",
+    "Aria Snow",
     "Frontend Engineer",
     "React Native Engineer",
     "Software Engineer",
@@ -30,12 +30,8 @@ export const MENULINKS = [
     ref: "skills",
   },
   {
-    name: "Projects",
-    ref: "projects",
-  },
-  {
-    name: "Work",
-    ref: "work",
+    name: "Creations",
+    ref: "Creations",
   },
   {
     name: "Contact",
@@ -44,32 +40,17 @@ export const MENULINKS = [
 ];
 
 export const TYPED_STRINGS = [
-  "A pragmatic Frontend Engineer",
-  "I build things for the web",
-  "I create aesthetic and modern apps",
+  "A Senior Designer",
+  "I create product campaigns",
+  "I make products stand out",
 ];
 
 export const SOCIAL_LINKS = [
   {
     name: "mail",
-    url: "mailto:shubhporwal73@gmail.com",
+    url: "mailto:ariasnow1112@outlook.com",
   },
-  {
-    name: "linkedin",
-    url: "https://www.linkedin.com/in/shubhporwal/",
-  },
-  {
-    name: "github",
-    url: "https://github.com/shubh73",
-  },
-  {
-    name: "instagram",
-    url: "https://www.instagram.com/shubhii73/",
-  },
-  {
-    name: "twitter",
-    url: "https://x.com/shubhporwal24",
-  },
+  
 ];
 
 export const SKILLS = {
@@ -100,97 +81,108 @@ export const SKILLS = {
   other: ["git", "cursor", "sanity"],
 };
 
+// export const PROJECTS = [
+//   {
+//     name: "NextBoss",
+//     imageKey: "nextboss",
+//     description: "Get hired through DMs not resumes 🤝",
+//     gradient: ["#FF69B4", "#FFB6C1"], // hot pink to light pink (cherry blossom inspired)
+//     url: null,
+//     tech: ["typescript", "react", "expo", "react-query"],
+//   },
+//   {
+//     name: "ReadyAI",
+//     imageKey: "ready-ai",
+//     description: "AI that gets you interview ready 🎯",
+//     gradient: ["#F4D03F", "#58D68D"], // warm gold to fresh green
+//     url: "https://play.google.com/store/apps/details?id=com.app.readyai",
+//     tech: ["typescript", "react"],
+//   },
+//   {
+//     name: "Grapevine Round1 AI",
+//     imageKey: "round1",
+//     description: "Ace your round one in 9 minutes  💼",
+//     gradient: ["#5D4037", "#8D6E63"], // dark brown to medium brown
+//     url: "https://play.google.com/store/apps/details?id=com.app.gvine",
+//     tech: ["typescript", "react", "react-query"],
+//   },
+//   {
+//     name: "React Native Directory",
+//     imageKey: "react-native-directory",
+//     description: "Search & filter React Native libraries via Raycast ⌨️",
+//     gradient: ["#000000", "#1A1A1A"], // pure black to dark gray
+//     url: "https://www.raycast.com/shubh_porwal/react-native-directory",
+//     tech: ["typescript", "react", "expo", "raycast"],
+//   },
+//   {
+//     name: "Buywow",
+//     imageKey: "buywow",
+//     description: "Official Wow Skin Science app 🌿",
+//     gradient: ["#FFD54F", "#FFB300"], // bright golden yellow to deep orange
+//     url: "https://play.google.com/store/apps/details?id=co.tapcart.app.id_99G6QNo3nu",
+//     tech: ["typescript", "react", "react-query"],
+//   },
+//   {
+//     name: "Bot9",
+//     imageKey: "bot9",
+//     description: "Automate support with AI 🤖",
+//     gradient: ["#3F51B5", "#7986CB"], // indigo to medium blue
+//     url: "https://bot9.ai/",
+//     tech: ["typescript", "react", "nextjs", "tailwindcss"],
+//   },
+//   {
+//     name: "Dukaan",
+//     imageKey: "dukaan",
+//     description: "Shopify for India 🛍️",
+//     gradient: ["#1976D2", "#1565C0"], // material blue to deep blue
+//     url: "https://play.google.com/store/apps/details?id=com.dukaan.app",
+//     tech: ["typescript", "react", "firebase", "tailwindcss", "react-query"],
+//   },
+//   {
+//     name: "Tesla",
+//     imageKey: "tesla",
+//     description: "Built with Expo 🏎️",
+//     gradient: ["#0F172A", "#1E293B"], // midnight blue to dark slate (electric/tech feel)
+//     url: "https://github.com/shubh73/tesla",
+//     tech: ["javascript", "expo"],
+//   },
+//   {
+//     name: "Airbnb",
+//     imageKey: "airbnb",
+//     description: "Built with NextJS + Tailwind CSS 🛏️",
+//     gradient: ["#1F2937", "#6B7280"], // dark gray to medium gray
+//     url: "https://shubh73-airbnb.vercel.app/",
+//     tech: ["javascript", "react", "nextjs", "mapbox", "tailwindcss"],
+//   },
+//   {
+//     name: "Medium",
+//     imageKey: "medium",
+//     description: "Built with NextJS + Tailwind CSS ✍🏻",
+//     gradient: ["#FF9800", "#F57C00"], // warm orange to deep orange
+//     url: "https://shubh73-medium.vercel.app/",
+//     tech: ["typescript", "react", "nextjs", "tailwindcss", "sanity"],
+//   },
+//   {
+//     name: "Inshorts",
+//     imageKey: "inshorts",
+//     description: "Voice-enabled news using Alan AI 🎙",
+//     gradient: ["#6366F1", "#4F46E5"], // indigo to deep indigo
+//     url: "https://shubh73-inshorts.netlify.app/",
+//     tech: ["javascript", "react", "chakra-ui", "alan"],
+//   },
+// ];
 export const PROJECTS = [
-  {
-    name: "NextBoss",
-    imageKey: "nextboss",
-    description: "Get hired through DMs not resumes 🤝",
-    gradient: ["#FF69B4", "#FFB6C1"], // hot pink to light pink (cherry blossom inspired)
-    url: null,
-    tech: ["typescript", "react", "expo", "react-query"],
-  },
-  {
-    name: "ReadyAI",
-    imageKey: "ready-ai",
-    description: "AI that gets you interview ready 🎯",
-    gradient: ["#F4D03F", "#58D68D"], // warm gold to fresh green
-    url: "https://play.google.com/store/apps/details?id=com.app.readyai",
-    tech: ["typescript", "react"],
-  },
-  {
-    name: "Grapevine Round1 AI",
-    imageKey: "round1",
-    description: "Ace your round one in 9 minutes  💼",
-    gradient: ["#5D4037", "#8D6E63"], // dark brown to medium brown
-    url: "https://play.google.com/store/apps/details?id=com.app.gvine",
-    tech: ["typescript", "react", "react-query"],
-  },
-  {
-    name: "React Native Directory",
-    imageKey: "react-native-directory",
-    description: "Search & filter React Native libraries via Raycast ⌨️",
-    gradient: ["#000000", "#1A1A1A"], // pure black to dark gray
-    url: "https://www.raycast.com/shubh_porwal/react-native-directory",
-    tech: ["typescript", "react", "expo", "raycast"],
-  },
-  {
-    name: "Buywow",
-    imageKey: "buywow",
-    description: "Official Wow Skin Science app 🌿",
-    gradient: ["#FFD54F", "#FFB300"], // bright golden yellow to deep orange
-    url: "https://play.google.com/store/apps/details?id=co.tapcart.app.id_99G6QNo3nu",
-    tech: ["typescript", "react", "react-query"],
-  },
-  {
-    name: "Bot9",
-    imageKey: "bot9",
-    description: "Automate support with AI 🤖",
-    gradient: ["#3F51B5", "#7986CB"], // indigo to medium blue
-    url: "https://bot9.ai/",
-    tech: ["typescript", "react", "nextjs", "tailwindcss"],
-  },
-  {
-    name: "Dukaan",
-    imageKey: "dukaan",
-    description: "Shopify for India 🛍️",
-    gradient: ["#1976D2", "#1565C0"], // material blue to deep blue
-    url: "https://play.google.com/store/apps/details?id=com.dukaan.app",
-    tech: ["typescript", "react", "firebase", "tailwindcss", "react-query"],
-  },
-  {
-    name: "Tesla",
-    imageKey: "tesla",
-    description: "Built with Expo 🏎️",
-    gradient: ["#0F172A", "#1E293B"], // midnight blue to dark slate (electric/tech feel)
-    url: "https://github.com/shubh73/tesla",
-    tech: ["javascript", "expo"],
-  },
-  {
-    name: "Airbnb",
-    imageKey: "airbnb",
-    description: "Built with NextJS + Tailwind CSS 🛏️",
-    gradient: ["#1F2937", "#6B7280"], // dark gray to medium gray
-    url: "https://shubh73-airbnb.vercel.app/",
-    tech: ["javascript", "react", "nextjs", "mapbox", "tailwindcss"],
-  },
-  {
-    name: "Medium",
-    imageKey: "medium",
-    description: "Built with NextJS + Tailwind CSS ✍🏻",
-    gradient: ["#FF9800", "#F57C00"], // warm orange to deep orange
-    url: "https://shubh73-medium.vercel.app/",
-    tech: ["typescript", "react", "nextjs", "tailwindcss", "sanity"],
-  },
-  {
-    name: "Inshorts",
-    imageKey: "inshorts",
-    description: "Voice-enabled news using Alan AI 🎙",
-    gradient: ["#6366F1", "#4F46E5"], // indigo to deep indigo
-    url: "https://shubh73-inshorts.netlify.app/",
-    tech: ["javascript", "react", "chakra-ui", "alan"],
-  },
+    {image:"/projects/1.png"},
+    {image:"/projects/2.png"},
+    {image:"/projects/3.png"},
+    {image:"/projects/4.png"},
+    {image:"/projects/5.png"},
+    {image:"/projects/6.png"},
+    {image:"/projects/7.png"},
+    {image:"/projects/8.png"},
+    {image:"/projects/9.png"},
+    {image:"/projects/10.png"},
 ];
-
 export const WORK_CONTENTS = {
   GRAPEVINE: [
     {
