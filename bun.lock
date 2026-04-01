@@ -16,7 +16,7 @@
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
         "react-hot-toast": "^2.6.0",
-        "react-reveal": "^1.2.2",
+        "react-awesome-reveal": "^1.2.2",
         "sass": "^1.77.1",
         "tailwind-merge": "^2.6.1",
         "typed.js": "^2.1.0",
@@ -704,7 +704,7 @@
 
     "react-is": ["react-is@16.13.1", "", {}, "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="],
 
-    "react-reveal": ["react-reveal@1.2.2", "", { "dependencies": { "prop-types": "^15.5.10" }, "peerDependencies": { "react": "^15.3.0 || ^16.0.0" } }, "sha512-JCv3fAoU6Z+Lcd8U48bwzm4pMZ79qsedSXYwpwt6lJNtj/v5nKJYZZbw3yhaQPPgYePo3Y0NOCoYOq/jcsisuw=="],
+    "react-awesome-reveal": ["react-awesome-reveal@1.2.2", "", { "dependencies": { "prop-types": "^15.5.10" }, "peerDependencies": { "react": "^15.3.0 || ^16.0.0" } }, "sha512-JCv3fAoU6Z+Lcd8U48bwzm4pMZ79qsedSXYwpwt6lJNtj/v5nKJYZZbw3yhaQPPgYePo3Y0NOCoYOq/jcsisuw=="],
 
     "read-cache": ["read-cache@1.0.0", "", { "dependencies": { "pify": "^2.3.0" } }, "sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA=="],
 

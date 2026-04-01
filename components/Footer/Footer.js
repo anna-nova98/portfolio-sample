@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState, useRef } from "react";
-import { Fade } from "react-reveal";
+import { Fade } from "react-awesome-reveal";
 import { Howl } from "howler";
 import Button from "../Button/Button";
 import FooterBg from "./FooterBg/FooterBg";
